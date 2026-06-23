@@ -1,0 +1,10 @@
+node_modules/
+Client/node_modules/
+Server/node_modules/
+
+.env
+.env.*
+Client/.env
+Client/.env.*
+Server/.env
+Server/.env.*
