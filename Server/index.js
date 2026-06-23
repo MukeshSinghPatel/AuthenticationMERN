@@ -11,7 +11,7 @@ const userRoute = require('./routes/userRoutes')
 
 connectDb();
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://authenticationmern-client-3okp.onrender.com']
 
 const app = express();
 const port = process.env.PORT || 4000;
