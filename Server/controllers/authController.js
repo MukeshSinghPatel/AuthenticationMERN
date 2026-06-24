@@ -37,10 +37,10 @@ exports.authRegister = async (req, res) => {
 
         res.cookie('token', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+            secure: true,
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000
-        })
+        });
         // Sending welcome email
         const mailOtpions = {
             from: process.env.EMAIL_USER,
@@ -96,10 +96,10 @@ exports.authLogin = async (req, res) => {
 
         res.cookie('token', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+            secure: true,
+            sameSite: 'None',
             maxAge: 7 * 24 * 60 * 60 * 1000
-        })
+        });
         return res.json({
             success: true,
             message: 'User login successfully'
@@ -117,9 +117,9 @@ exports.authLogout = async (req, res) => {
     try {
         res.clearCookie('token', {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict'
-        })
+            secure: true,
+            sameSite: 'None'
+        });
 
         return res.json({
             success: true,
@@ -361,7 +361,7 @@ exports.resetPassword = async (req, res) => {
             message: 'Password has been reset successfully'
         })
 
-    } 
+    }
     catch (error) {
         return res.json({
             success: false,
