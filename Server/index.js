@@ -11,7 +11,7 @@ const userRoute = require('./routes/userRoutes')
 
 connectDb();
 
-const allowedOrigins = ['https://authenticationmern-client-49dn.onrender.com']
+const allowedOrigins = ['https://authenticationmern-cli.onrender.com']
 
 const app = express();
 const port = process.env.PORT || 4000;
